@@ -1,6 +1,7 @@
 {
 	"scripts": {
-		"dev": "pnpm parcel src/index.html"
+		"dev": "pnpm parcel src/index.html",
+		"build": "pnpm parcel build src/index.html"
 	},
 	"devDependencies": {
 		"parcel": "^2.16.4",
