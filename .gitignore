@@ -1,0 +1,6 @@
+**/*.DS_Store
+.direnv
+**/*just.zsh
+dist
+node_modules
+.parcel-cache
