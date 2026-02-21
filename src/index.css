@@ -1,1 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
 @import "tailwindcss";
+
+.font-anton-regular {
+    @apply font-normal not-italic;
+    font-family: "Anton", sans-serif;
+}
+
+.font-fraunces {
+    @apply font-normal not-italic;
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+
+@theme {
+    --color-primary: #0e3855;
+    --color-secondary: #53638e;
+    --color-accent: #8B1B2C;
+}
+
+a {
+    @apply underline;
+    @apply text-blue-300 visited:text-purple-700
+}
+
+.title {
+    @apply tracking-wide;
+    @apply text-6xl;
+}
+
+.quote {
+    @apply tracking-wide;
+    @apply text-2xl;
+}
+
+.location {
+    @apply py-10;
+    @apply bg-gray-600 text-white;
+}

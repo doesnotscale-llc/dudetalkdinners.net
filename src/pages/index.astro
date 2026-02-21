@@ -1,0 +1,65 @@
+---
+import "../index.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dude Talk Dinners</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="font-anton-regular title space-y-5 mb-6">
+        <span class="text-primary block">Dude</span>
+        <span class="text-secondary block">Talk</span>
+        <span class="text-primary block">Dinners</span>
+      </h1>
+      <p class="quote font-fraunces flex-col justify-center items-center">
+        We'll be here with free food and space to talk. All you have to do is
+        show up!
+      </p>
+    </header>
+
+    <main>
+      <section class="location space-y-3 text-center">
+        <div class="font-bold text-lg">
+          <p>2 Dads Eatery and Taproom</p>
+          <p>
+            <a
+              id="maps-link"
+              href="https://www.google.com/maps/search/?api=1&query=60006+US+Highway+285,+Bailey,+CO+80421"
+              >60006 US Highway 285 Bailey, CO 80421</a
+            >
+          </p>
+        </div>
+        <div><p>Last Monday of Every Month at 6:00 PM</p></div>
+        <div>
+          <p>
+            Questions? Email us at
+            <a href="mailto:info@allaccesswellness.org"
+              >info@allaccesswellness.org</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const address = "60006 US Highway 285, Bailey, CO 80421";
+      const mapsLink = document.getElementById(
+        "maps-link",
+      ) as HTMLAnchorElement;
+
+      if (mapsLink) {
+        const ua = navigator.userAgent;
+        if (/iPad|iPhone|iPod/.test(ua)) {
+          mapsLink.href = `maps://?q=${encodeURIComponent(address)}`;
+        } else if (/Android/.test(ua)) {
+          mapsLink.href = `geo:0,0?q=${encodeURIComponent(address)}`;
+        }
+      }
+    </script>
+  </body>
+</html>
