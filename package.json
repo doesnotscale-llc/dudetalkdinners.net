@@ -4,7 +4,8 @@
     "build": "astro build"
   },
   "devDependencies": {
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.0",

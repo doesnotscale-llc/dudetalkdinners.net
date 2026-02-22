@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
 
 @import "tailwindcss";
 
-.font-anton-regular {
+.font-anton {
     @apply font-normal not-italic;
     font-family: "Anton", sans-serif;
 }
@@ -11,23 +11,55 @@
     @apply font-normal not-italic;
     font-family: "Fraunces", serif;
     font-optical-sizing: auto;
-    font-variation-settings: "SOFT" 0, "WONK" 0;
+    font-variation-settings: "SOFT" 0,
+    "WONK" 0;
 }
 
 @theme {
     --color-primary: #0e3855;
     --color-secondary: #53638e;
-    --color-accent: #8B1B2C;
+    --color-accent: #bd1a30;
+}
+
+body {
+    background-image: radial-gradient(
+            circle,
+            var(--color-secondary) 1.5px,
+            transparent 1.5px
+    );
+    background-size: 20px 20px;
 }
 
 a {
     @apply underline;
-    @apply text-blue-300 visited:text-purple-700
+    @apply text-blue-300;
+}
+
+.hero {
+    @apply relative;
+    background-image: url("/mt-blue-sky.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::after {
+    content: "";
+    @apply absolute inset-0;
+    background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0.5)
+    );
+}
+
+.hero-content {
+    @apply relative z-10 px-4 py-16;
 }
 
 .title {
     @apply tracking-wide;
     @apply text-6xl;
+    @apply uppercase;
 }
 
 .quote {
@@ -38,4 +70,12 @@ a {
 .location {
     @apply py-10;
     @apply bg-gray-600 text-white;
+}
+
+.banner {
+    @apply bg-accent;
+    @apply text-white;
+    @apply uppercase;
+    @apply text-xl;
+    @apply px-5 py-2;
 }
