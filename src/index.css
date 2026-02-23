@@ -2,13 +2,33 @@
 
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #0e3855;
+  --color-secondary: #53638e;
+  --color-accent: #bd1a30;
+  --color-page: white;
+}
+
+.paper {
+  @apply bg-page;
+  @apply shadow-xl shadow-black/30;
+}
+
+.page-width {
+  @apply m-auto w-full max-w-5xl;
+}
+
+.full-width-banner {
+  @apply bg-primary;
+  @apply text-center text-white;
+  @apply shadow-lg shadow-black/30;
+}
+
 .font-anton {
-  @apply font-normal not-italic;
   font-family: "Anton", sans-serif;
 }
 
 .font-fraunces {
-  @apply font-normal not-italic;
   font-family: "Fraunces", serif;
   font-optical-sizing: auto;
   font-variation-settings:
@@ -16,67 +36,30 @@
     "WONK" 0;
 }
 
-@theme {
-  --color-primary: #0e3855;
-  --color-secondary: #53638e;
-  --color-accent: #bd1a30;
-}
-
-body {
+.bg-dots {
   background-image: radial-gradient(
     circle,
-    var(--color-secondary) 1.5px,
+    color-mix(in srgb, var(--color-secondary) 25%, transparent) 1.5px,
     transparent 1.5px
   );
   background-size: 20px 20px;
 }
 
-a {
-  @apply underline;
-  @apply text-blue-300;
+.bg-mountain {
+  @apply bg-cover bg-bottom;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.95) 10%,
+      rgba(255, 255, 255, 0.80) 70%,
+      rgba(255, 255, 255, 0.7)
+    ),
+    url(/mt-blue-sky.jpg);
 }
 
-.hero {
-  @apply relative;
-  background-image: url("/mt-blue-sky.jpg");
-  background-size: cover;
-  background-position: center;
+.link {
+  @apply text-blue-300 underline;
 }
 
-.hero::after {
-  content: "";
-  @apply absolute inset-0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.5)
-  );
-}
-
-.hero-content {
-  @apply relative z-10 px-4 py-16;
-}
-
-.title {
-  @apply tracking-wide;
-  @apply text-6xl;
-  @apply uppercase;
-}
-
-.quote {
-  @apply tracking-wide;
-  @apply text-2xl;
-}
-
-.location {
-  @apply py-10;
-  @apply bg-gray-600 text-white;
-}
-
-.banner {
-  @apply bg-accent;
-  @apply text-white;
-  @apply uppercase;
-  @apply text-xl;
-  @apply px-5 py-2;
-}
+/*********************/

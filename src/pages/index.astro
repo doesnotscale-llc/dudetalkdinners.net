@@ -9,51 +9,58 @@ import "../index.css";
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Dude Talk Dinners</title>
   </head>
-  <body class="flex flex-col items-center">
-    <div class="w-full max-w-5xl shadow-xl">
-      <header class="hero">
-        <div class="hero-content">
-          <h1 class="font-anton title mb-5 space-y-5">
-            <span class="text-primary block">Dude</span>
-            <span class="text-secondary block">Talk</span>
-            <span class="text-primary block">Dinners</span>
-          </h1>
-
-          <div
-            class="quote font-fraunces mb-2 flex-col items-center justify-center space-y-3 sm:w-96"
+  <body>
+    <div class="bg-dots h-screen">
+      <div class="flex h-full w-full flex-col">
+        <!-- TOP -->
+        <header class="paper page-width bg-mountain pl10 mt-10 p-3 sm:p-10">
+          <h1
+            class="font-anton flex flex-col gap-2 text-5xl font-normal uppercase not-italic sm:mb-5 sm:gap-3 sm:text-7xl sm:tracking-wide"
           >
-            <p>We'll be here with free food, and space to talk.</p>
+            <span class="text-primary">Dude</span>
+            <span class="text-secondary">Talk</span>
+            <span class="text-primary">Dinners</span>
+          </h1>
+          <div
+            class="font-fraunces text-md w-3/4 flex-col items-center justify-center space-y-3 py-5 tracking-wide not-italic sm:text-2xl"
+          >
+            <p>We'll be here with free food, and a space to talk.</p>
             <p>All you have to do is show up!</p>
+          </div>
+        </header>
 
-            <div class="banner">
-              <p>Now on Mondays!</p>
-            </div>
+        <!-- MIDDLE -->
+        <section class="full-width-banner space-y-5 py-5 sm:py-10">
+          <div class="font-bold sm:text-xl">
+            <a
+              class="link"
+              href="https://www.google.com/maps/search/?api=1&query=60006+US+Highway+285,+Bailey,+CO+80421"
+              >2 Dads Eatery and Taproom<br />60006 US Highway 285 Bailey, CO
+              80421</a
+            >
           </div>
-        </div>
-      </header>
-
-      <main>
-        <section class="location space-y-3 text-center">
-          <div class="text-lg font-bold">
-            <p>2 Dads Eatery and Taproom</p>
-            <p>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=60006+US+Highway+285,+Bailey,+CO+80421"
-                >60006 US Highway 285 Bailey, CO 80421</a
-              >
-            </p>
-          </div>
-          <div><p>Last Monday of Every Month at 6:00 PM</p></div>
-          <div>
-            <p>
-              Questions? Email us at
-              <a href="mailto:info@allaccesswellness.org"
-                >info@allaccesswellness.org</a
-              >
-            </p>
-          </div>
+          <p>Last Monday of Every Month at 6:00 PM</p>
+          <p class="font-bold">
+            Questions? Email us at <a
+              class="link"
+              href="mailto:info@allaccesswellness.org"
+              >info@allaccesswellness.org</a
+            >
+          </p>
         </section>
-      </main>
+
+        <!-- BOTTOM -->
+        <section class="page-width paper flex-1"></section>
+
+        <!-- FOOTER -->
+        <footer class="page-width paper py-5">
+          <p
+            class="text-center font-sans text-xs text-gray-400 uppercase sm:text-sm"
+          >
+            Does Not Scale · 2026
+          </p>
+        </footer>
+      </div>
     </div>
   </body>
 </html>
