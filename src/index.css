@@ -37,10 +37,10 @@
 }
 
 .bg-dots {
-  @apply bg-amber-50;
+  @apply bg-secondary/20;
   background-image: radial-gradient(
     circle,
-    color-mix(in srgb, var(--color-amber-100) 25%, transparent) 1.5px,
+    color-mix(in srgb, var(--color-secondary) 25%, transparent) 1.5px,
     transparent 1.5px
   );
   background-size: 20px 20px;
