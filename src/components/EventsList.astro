@@ -1,0 +1,55 @@
+---
+import { events, formatDate, formatTime } from "../data/events";
+
+const today = new Date().toISOString().slice(0, 10);
+const upcomingEvents = events.filter((e) => e.date >= today);
+---
+
+<div class="p-6 sm:p-10">
+  <h2
+    class="font-anton text-primary mb-6 text-2xl font-normal uppercase sm:text-3xl"
+  >
+    Upcoming Events
+  </h2>
+
+  {
+    upcomingEvents.length === 0 ? (
+      <p class="font-fraunces text-gray-500">No upcoming events scheduled.</p>
+    ) : (
+      <ul class="space-y-4">
+        {upcomingEvents.map((event) => (
+          <li class="flex flex-col gap-3 rounded-lg border border-gray-200 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div class="space-y-1">
+              <p class="font-fraunces text-primary font-semibold sm:text-lg">
+                {formatDate(event.date)}
+              </p>
+              <p class="text-secondary text-sm">
+                {formatTime(event.startTime)} – {formatTime(event.endTime)}
+              </p>
+              <p class="text-sm text-gray-500">
+                {event.venueName}, {event.address1}, {event.address2}
+              </p>
+            </div>
+            <add-to-calendar-button
+              name={event.title}
+              startDate={event.date}
+              startTime={event.startTime}
+              endTime={event.endTime}
+              timeZone={event.timeZone}
+              location={`${event.venueName}, ${event.address1}, ${event.address2}`}
+              options="'Apple','Google','Outlook.com','iCal'"
+              buttonStyle="round"
+              size="3"
+              lightMode="light"
+              label="Add to Calendar"
+            />
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</div>
+
+<script>
+  import "add-to-calendar-button";
+</script>

@@ -9,8 +9,11 @@
     "prettier-plugin-tailwindcss": "^0.7.2"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.2.93",
     "@tailwindcss/vite": "^4.2.0",
+    "add-to-calendar-button": "^2.13.8",
     "astro": "^5.17.3",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.1.18"
   }
 }

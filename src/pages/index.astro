@@ -1,5 +1,11 @@
 ---
 import "../index.css";
+import EventsList from "../components/EventsList.astro";
+import { events, formatDate, formatTime, mapsUrl } from "../data/events";
+import { Icon } from "astro-icon/components";
+
+const today = new Date().toISOString().slice(0, 10);
+const nextEvent = events.find((e) => e.date >= today);
 ---
 
 <!doctype html>
@@ -22,7 +28,7 @@ import "../index.css";
             <span class="text-primary">Dinners</span>
           </h1>
           <div
-            class="font-fraunces text-md w-3/4 flex-col items-center justify-center space-y-3 py-5 tracking-wide not-italic sm:text-2xl"
+            class="font-fraunces text-md w-3/4 flex-col items-center justify-center space-y-3 py-5 pb-2 tracking-wide not-italic sm:pb-0 sm:text-2xl"
           >
             <p>We'll be here with free food, and a space to talk.</p>
             <p>All you have to do is show up!</p>
@@ -30,27 +36,55 @@ import "../index.css";
         </header>
 
         <!-- MIDDLE -->
-        <section class="full-width-banner space-y-5 py-5 sm:py-10">
-          <div class="font-bold sm:text-xl">
-            <a
-              class="link"
-              href="https://www.google.com/maps/search/?api=1&query=60006+US+Highway+285,+Bailey,+CO+80421"
-              >2 Dads Eatery and Taproom<br />60006 US Highway 285 Bailey, CO
-              80421</a
+        <section
+          class="full-width-banner flex flex-col items-center gap-2 space-y-5 p-5 sm:py-10"
+        >
+          <div class="flex flex-col items-center gap-4 sm:flex-row sm:gap-10">
+            <h2
+              class="font-fraunces bg-accent px-10 py-1 text-xl shadow-lg shadow-black/30 sm:py-2 sm:text-2xl"
             >
+              Next Event
+            </h2>
+            {
+              nextEvent && (
+                <div class="flex flex-1 flex-col gap-3">
+                  <>
+                    <div class="flex justify-center gap-2">
+                      <Icon
+                        name="lucide:calendar-clock"
+                        class="text-secondary h-6 w-6"
+                      />
+                      <p class="flex-1">
+                        {formatDate(nextEvent.date)} at{" "}
+                        {formatTime(nextEvent.startTime)}
+                      </p>
+                    </div>
+
+                    <div class="flex justify-center gap-2">
+                      <Icon
+                        name="lucide:map-pin"
+                        class="text-secondary mt-1 h-6 w-6"
+                      />
+                      <a
+                        class="link flex-1"
+                        href={mapsUrl(nextEvent.address1, nextEvent.address2)}
+                      >
+                        <span class="block">{nextEvent.venueName}</span>
+                        <span class="block">{nextEvent.address1}</span>
+                        <span class="block">{nextEvent.address2}</span>
+                      </a>
+                    </div>
+                  </>
+                </div>
+              )
+            }
           </div>
-          <p>Last Monday of Every Month at 6:00 PM</p>
-          <p class="font-bold">
-            Questions? Email us at <a
-              class="link"
-              href="mailto:info@allaccesswellness.org"
-              >info@allaccesswellness.org</a
-            >
-          </p>
         </section>
 
         <!-- BOTTOM -->
-        <section class="page-width paper flex-1"></section>
+        <section class="page-width paper flex-1">
+          <EventsList />
+        </section>
 
         <!-- FOOTER -->
         <footer class="page-width paper py-5">

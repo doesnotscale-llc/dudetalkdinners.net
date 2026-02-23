@@ -20,7 +20,7 @@
 
 .full-width-banner {
   @apply bg-primary;
-  @apply text-center text-white;
+  @apply text-white;
   @apply shadow-lg shadow-black/30;
 }
 
