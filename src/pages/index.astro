@@ -90,7 +90,7 @@ const nextEvent = events.find((e) => e.date >= today);
                     <div class="flex justify-center gap-2">
                       <Icon
                         name="lucide:map-pin"
-                        class="text-secondary mt-1 h-6 w-6"
+                        class="text-secondary h-6 w-6"
                       />
                       <a
                         class="link flex-1"
@@ -113,11 +113,32 @@ const nextEvent = events.find((e) => e.date >= today);
           <EventsList />
         </section>
 
-        <!-- FOOTER -->
-        <footer class="page-width paper py-5">
-          <p
-            class="text-center font-sans text-xs text-gray-400 uppercase sm:text-sm"
+        <!-- SPONSORS -->
+        <section class="page-width paper p-6 pt-10 sm:p-10">
+          <h2
+            class="font-anton text-primary mb-6 text-2xl font-normal uppercase sm:text-3xl"
           >
+            Sponsors
+          </h2>
+          <div class="flex flex-wrap items-center justify-center gap-8">
+            <a
+              href="https://www.2dadseaterytaproom.com/"
+              target="_blank"
+              rel="noopener"
+              class="block"
+            >
+              <img
+                src="/2-dads-banner.webp"
+                alt="2 Dads Eatery & Taproom — Bailey, Colorado"
+                class="block h-64 w-auto rounded-lg border border-gray-500 object-contain shadow-none transition-shadow hover:shadow-lg"
+              />
+            </a>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="page-width bg-primary p-10 text-gray-200">
+          <p class="text-center font-sans text-xs uppercase sm:text-xs">
             Does Not Scale · 2026
           </p>
         </footer>
